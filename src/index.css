@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+#root {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto Slab", serif, "Roboto Mono", monospace, "Roboto",
+    sans-serif;
+
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  overflow: hidden;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  border-radius: 5px;
+  scrollbar-color: rgba(0, 0, 0, 0.226) transparent;
+}
