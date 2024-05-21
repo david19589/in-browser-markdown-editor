@@ -7,6 +7,12 @@ import CloseMenu from "/src/assets/icon-close.svg";
 function Header(props: {
   openMenu: boolean;
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  deleteClick: boolean;
+  setDeleteClick: React.Dispatch<React.SetStateAction<boolean>>;
+  docName: string;
+  setDocName: React.Dispatch<React.SetStateAction<string>>;
+  markdown: string;
+  setMarkdown: React.Dispatch<React.SetStateAction<string>>;
 }) {
   return (
     <div className="flex justify-between items-center bg-[#2B2D31]">
@@ -36,12 +42,21 @@ function Header(props: {
               type="text"
               id="input"
               placeholder="welcome.md"
+              value={props.docName}
+              onChange={(e) => {
+                props.setDocName(e.target.value);
+              }}
             />
           </div>
         </div>
       </div>
       <div className="flex items-center gap-[24px] mr-[16px]">
-        <div className="group cursor-pointer">
+        <div
+          onClick={() => {
+            props.setDeleteClick(!props.deleteClick);
+          }}
+          className="group cursor-pointer"
+        >
           <svg width="18" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
               className="group-hover:fill-[#E46643] transition-all duration-200"
@@ -50,7 +65,15 @@ function Header(props: {
             />
           </svg>
         </div>
-        <div className="flex gap-[8px] px-[16px] py-[12px] bg-[#E46643] hover:bg-[#F39765] rounded-md cursor-pointer transition-all duration-200">
+        <div
+          onClick={() => {
+            props.setMarkdown(props.markdown);
+            localStorage.setItem("setMarkdown", props.markdown);
+            props.setDocName(props.docName);
+            localStorage.setItem("docName", props.docName);
+          }}
+          className="flex gap-[8px] px-[16px] py-[12px] bg-[#E46643] hover:bg-[#F39765] rounded-md cursor-pointer transition-all duration-200"
+        >
           <img className="min-w-[16px]" src={Save} alt="Save" />
           <h1 className="hidden tablet:flex text-[15px] leading-[17.58px] font-[400] font-sans text-[#FFF]">
             Save Changes
