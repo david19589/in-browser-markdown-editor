@@ -16,7 +16,7 @@ function DeleteDocument(props: {
       <div
         className={`${
           props.darkMode ? "bg-[#1D1F22]" : "bg-[#FFF]"
-        } flex flex-col p-[24px] max-w-[343px]`}
+        } flex flex-col p-[24px] max-w-[343px] mx-[10px]`}
       >
         <h1
           className={`${
@@ -26,7 +26,7 @@ function DeleteDocument(props: {
           Delete this document?
         </h1>
         <p className="text-[14px] leading-[24px] font-[700] font-serif max-w-[278px] text-[#7C8187] mb-[16px]">
-          Are you sure you want to delete the `{props.docName}` document and its
+          Are you sure you want to delete the `{props.docName || "welcome.md"}` document and its
           contents? This action cannot be reversed.
         </p>
         <button
