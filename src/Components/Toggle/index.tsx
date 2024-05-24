@@ -5,7 +5,7 @@ function Toggle(props: {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [isToggled, setIsToggled] = useState(false);
-  console.log(isToggled);
+
   return (
     <div className="flex items-center absolute bottom-[52px]">
       <svg
