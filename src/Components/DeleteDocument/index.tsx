@@ -1,3 +1,5 @@
+import Close from "/src/assets/icon-close.svg";
+
 function DeleteDocument(props: {
   deleteClick: boolean;
   darkMode: boolean;
@@ -16,8 +18,17 @@ function DeleteDocument(props: {
       <div
         className={`${
           props.darkMode ? "bg-[#1D1F22]" : "bg-[#FFF]"
-        } flex flex-col p-[24px] max-w-[343px] mx-[10px]`}
+        } flex flex-col p-[24px] max-w-[343px] mx-[10px] relative`}
       >
+        <img
+          onClick={() => {
+            props.setDeleteClick(!props.deleteClick);
+          }}
+          className="absolute right-[24px] w-[28px] h-[28px] bg-[#E46643] hover:bg-[#F39765] rounded p-[8px] cursor-pointer"
+          src={Close}
+          alt="Close"
+        />
+
         <h1
           className={`${
             props.darkMode && "text-[#FFF]"
@@ -26,8 +37,8 @@ function DeleteDocument(props: {
           Delete this document?
         </h1>
         <p className="text-[14px] leading-[24px] font-[700] font-serif max-w-[278px] text-[#7C8187] mb-[16px]">
-          Are you sure you want to delete the `{props.docName || "welcome.md"}` document and its
-          contents? This action cannot be reversed.
+          Are you sure you want to delete the `{props.docName || "welcome.md"}`
+          document and its contents? This action cannot be reversed.
         </p>
         <button
           onClick={() => {
