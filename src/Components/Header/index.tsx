@@ -10,10 +10,26 @@ function Header(props: {
   deleteClick: boolean;
   setDeleteClick: React.Dispatch<React.SetStateAction<boolean>>;
   docName: string;
-  setDocName: React.Dispatch<React.SetStateAction<string>>;
+  setDocName: (newName: string) => void;
   markdown: string;
   setMarkdown: React.Dispatch<React.SetStateAction<string>>;
+  documents: Array<{ name: string; content: string }>;
 }) {
+  const handleSave = () => {
+    if (props.documents.length !== 0) {
+      props.setMarkdown(props.markdown);
+      localStorage.setItem("setMarkdown", props.markdown);
+      props.setDocName(props.docName);
+      localStorage.setItem("docName", props.docName);
+    }
+  };
+
+  const handleDocName = (e: { target: { value: string } }) => {
+    if (props.documents.length !== 0) {
+      props.setDocName(e.target.value);
+    }
+  };
+
   return (
     <div className="flex justify-between items-center bg-[#2B2D31]">
       <div className="flex items-center">
@@ -41,11 +57,8 @@ function Header(props: {
               className="w-full outline-none bg-[#2B2D31] text-[15px] leading-[17.58px] font-[400] font-sans text-[#FFF] placeholder:text-[#FFF]"
               type="text"
               id="input"
-              placeholder="welcome.md"
               value={props.docName}
-              onChange={(e) => {
-                props.setDocName(e.target.value);
-              }}
+              onChange={handleDocName}
             />
           </div>
         </div>
@@ -55,7 +68,9 @@ function Header(props: {
           onClick={() => {
             props.setDeleteClick(!props.deleteClick);
           }}
-          className="group cursor-pointer"
+          className={`${
+            props.documents.length === 0 && "hidden"
+          } group cursor-pointer`}
         >
           <svg width="18" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -66,13 +81,10 @@ function Header(props: {
           </svg>
         </div>
         <div
-          onClick={() => {
-            props.setMarkdown(props.markdown);
-            localStorage.setItem("setMarkdown", props.markdown);
-            props.setDocName(props.docName);
-            localStorage.setItem("docName", props.docName);
-          }}
-          className="flex gap-[8px] px-[16px] py-[12px] bg-[#E46643] hover:bg-[#F39765] rounded-md cursor-pointer transition-all duration-200"
+          onClick={handleSave}
+          className={`${
+            props.documents.length === 0 && "bg-[#5a6069] hover:bg-[#5a6069]"
+          } flex gap-[8px] px-[16px] py-[12px] bg-[#E46643] hover:bg-[#F39765] rounded-md cursor-pointer transition-all duration-200`}
         >
           <img className="min-w-[16px]" src={Save} alt="Save" />
           <h1 className="hidden tablet:flex text-[15px] leading-[17.58px] font-[400] font-sans text-[#FFF]">
