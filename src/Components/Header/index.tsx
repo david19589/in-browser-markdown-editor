@@ -83,8 +83,10 @@ function Header(props: {
         <div
           onClick={handleSave}
           className={`${
-            props.documents.length === 0 && "bg-[#5a6069] hover:bg-[#5a6069]"
-          } flex gap-[8px] px-[16px] py-[12px] bg-[#E46643] hover:bg-[#F39765] rounded-md cursor-pointer transition-all duration-200`}
+            props.documents.length === 0
+              ? "bg-[#5a6069] hover:bg-[#5a6069]"
+              : "bg-[#E46643] hover:bg-[#F39765] cursor-pointer"
+          } flex gap-[8px] px-[16px] py-[12px] rounded-md transition-all duration-200`}
         >
           <img className="min-w-[16px]" src={Save} alt="Save" />
           <h1 className="hidden tablet:flex text-[15px] leading-[17.58px] font-[400] font-sans text-[#FFF]">

@@ -7,7 +7,7 @@ function Toggle(props: {
   const [isToggled, setIsToggled] = useState(false);
 
   return (
-    <div className="flex items-center absolute bottom-[52px]">
+    <div className="flex items-center absolute bottom-[100px]">
       <svg
         className={isToggled ? "fill-[#5A6069]" : "fill-[#FFF]"}
         width="18"
