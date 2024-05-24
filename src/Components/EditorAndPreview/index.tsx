@@ -63,7 +63,7 @@ function Editor(props: {
           <h1
             className={`${
               props.darkMode ? "bg-[#151619]" : "bg-[#F5F5F5]"
-            } fixed text-[14px] font-[500] w-full tablet:w-1/2 text-[#7C8187] font-sans pl-[16px] py-[14px] leading-[16.41px] tracking-[2px] z-10`}
+            } absolute top-0 text-[14px] font-[500] w-full tablet:w-1/2 text-[#7C8187] font-sans pl-[16px] py-[14px] leading-[16.41px] tracking-[2px] z-10`}
           >
             MARKDOWN
           </h1>
@@ -93,7 +93,7 @@ function Editor(props: {
           <h1
             className={`${
               Prev ? "tablet:w-full" : ""
-            } fixed text-[14px] font-[500] w-full tablet:w-1/2 text-[#7C8187] font-sans pl-[16px] py-[14px] leading-[16.41px] tracking-[2px] z-10 ${
+            } absolute top-0 text-[14px] font-[500] w-full tablet:w-1/2 text-[#7C8187] font-sans pl-[16px] py-[14px] leading-[16.41px] tracking-[2px] z-10 ${
               props.darkMode ? "bg-[#151619]" : "bg-[#F5F5F5]"
             }`}
           >
