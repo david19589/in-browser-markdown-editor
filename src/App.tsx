@@ -102,7 +102,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-row overflow-hidden">
+      <div className="flex flex-row overflow-hidden h-[100vh]">
         <div
           className={`${
             openMenu ? "translate-x-0" : "translate-x-[-256px] z-40"
