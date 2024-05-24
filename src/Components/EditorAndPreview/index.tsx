@@ -19,7 +19,7 @@ function Editor(props: {
       <div
         className={`${
           Prev ? "flex items-center w-full" : ""
-        } flex h-[86vh] relative`}
+        } flex h-[80vh] relative`}
       >
         <div
           onClick={() => {
