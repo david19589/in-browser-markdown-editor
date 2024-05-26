@@ -1,7 +1,7 @@
 import Toggle from "../Toggle";
 import Logo from "/src/assets/logo.svg";
 import Document from "/src/assets/icon-document.svg";
-import formatDate from "../FormatDate";
+import formatDate from "../utils/FormatDate";
 
 function Menu(props: {
   darkMode: boolean;

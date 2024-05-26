@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
-import MarkdownToHtml from "../MarkdownToHtml";
-import useSynchronizedScroll from "../useSynchronizedScroll";
+import MarkdownToHtml from "../utils/MarkdownToHtml";
+import useSynchronizedScroll from "../utils/useSynchronizedScroll";
 
 function Editor(props: {
   darkMode: boolean;

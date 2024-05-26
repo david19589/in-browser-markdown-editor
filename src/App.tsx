@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import EditorAndPreview from "./Components/EditorAndPreview";
 import Header from "./Components/Header";
 import DeleteDocument from "./Components/DeleteDocument";
-import initialText from "./Components/DefaultText";
+import initialText from "./Components/utils/DefaultText";
 import Menu from "./Components/Menu";
 
 type DocumentType = {
